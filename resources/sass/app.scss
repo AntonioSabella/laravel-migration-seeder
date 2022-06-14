@@ -1,1 +1,49 @@
 @use 'bootstrap';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+
+main {
+    .vacation {
+        h4 {
+            font-weight: 600;
+        }
+        h5 {
+            font-weight: 600;
+        }
+        img {
+            border-radius: 0.5rem;
+            border: 3px solid transparent;
+            &:hover {
+                border: 3px solid cornflowerblue;
+                filter: grayscale(1);
+            }
+        }
+        .package_type {
+            width: 25%;
+            background-color: palegreen;
+            font-size: 10px;
+            font-weight: bold;
+            color: cornflowerblue;
+            text-align: center;
+            padding: 0.2rem 0.5rem;
+        }
+        .price {
+            width: 25%;
+            background-color: coral;
+            font-size: 10px;
+            font-weight: bold;
+            color: cornflowerblue;
+            text-align: center;
+            padding: 0.2rem 0.5rem;
+        }
+    }
+}

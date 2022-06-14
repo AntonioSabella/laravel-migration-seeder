@@ -1,100 +1,45 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends ('layouts.app')
 
-        <title>Laravel</title>
+@section('content')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+<main>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+<div class="container">
+        <h1 class='text-center'>Vacation packages:</h1>
+        <div class="vacations row row-cols-3">
 
-            .full-height {
-                height: 100vh;
-            }
+            @forelse($vacations as $vacation)
+                <div class="col">
+                        <div class="vacation">
+                            <img class="img-fluid" src="{{$vacation->img}}" alt="{{$vacation->destination}}">
+                            <h4>{{$vacation->destination}}</h4>
+                            <span><strong>Period: </strong> {{$vacation->start_vacation}} / {{$vacation->end_vacation}} </span>
+                            <h5>"{{$vacation->hotel}}"</h5>
+                            <small><strong>Numero stanze</strong>: {{$vacation->rooms}}</small>
+                            <small><strong>Adulti</strong>: {{$vacation->customers}}</small>
+                            <div class="package_type">
+                            {{$vacation->package_type}}
+                            </div>
+                            <div class="price">
+                            € {{$vacation->price}}
+                            </div>
+                            <small><strong>Viaggio</strong> : {{$vacation->transport_type}} - "{{$vacation->transport_company}}"</small>
+                            <p><i>"{{$vacation->vacation_notes}}"</i></p>
+                        </div>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+                    </a>
                 </div>
-            @endif
+            @empty
+            <div class="col">Nessun risultato da mostrare</div>
+            @endforelse
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
         </div>
-    </body>
-</html>
+    </div>
+
+
+</main>
+
+
+
+
+@endsection

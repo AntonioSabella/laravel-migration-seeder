@@ -12173,3 +12173,51 @@ fieldset:disabled .btn {
   }
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+main .vacation h4 {
+  font-weight: 600;
+}
+
+main .vacation h5 {
+  font-weight: 600;
+}
+
+main .vacation img {
+  border-radius: 0.5rem;
+  border: 3px solid transparent;
+}
+
+main .vacation img:hover {
+  border: 3px solid cornflowerblue;
+  filter: grayscale(1);
+}
+
+main .vacation .package_type {
+  width: 25%;
+  background-color: palegreen;
+  font-size: 10px;
+  font-weight: bold;
+  color: cornflowerblue;
+  text-align: center;
+  padding: 0.2rem 0.5rem;
+}
+
+main .vacation .price {
+  width: 25%;
+  background-color: coral;
+  font-size: 10px;
+  font-weight: bold;
+  color: cornflowerblue;
+  text-align: center;
+  padding: 0.2rem 0.5rem;
+}
+
