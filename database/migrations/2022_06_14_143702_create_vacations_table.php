@@ -19,8 +19,8 @@ class CreateVacationsTable extends Migration
             $table->string('img');
             $table->string('package_type', 50)->nullable();
             $table->boolean('is_available')->default(1);
-            $table->date('start_vacation')->nullable();
-            $table->date('end_vacation')->nullable();
+            $table->string('start_vacation', 30)->nullable();
+            $table->string('end_vacation', 30)->nullable();
             $table->string('transport_type', 15)->nullable();
             $table->string('transport_company', 100)->nullable();
             $table->decimal('price', 6, 2 )->nullable();
